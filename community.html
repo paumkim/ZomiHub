@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZomiHub Community</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page="community">
+    <header class="app-header" id="top">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">✧</span>
+        <a class="brand-name" href="index.html">ZomiHub</a>
+      </div>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="collections.html" data-nav="collections">Collections</a>
+        <a href="books.html" data-nav="books">Books</a>
+        <a href="films.html" data-nav="films">Films</a>
+        <a href="tv.html" data-nav="tv">TV</a>
+        <a href="music.html" data-nav="music">Music</a>
+        <a href="articles.html" data-nav="articles">Articles</a>
+        <a href="library.html" data-nav="library">My Library</a>
+        <a href="downloads.html" data-nav="downloads">Downloads</a>
+        <a href="community.html" data-nav="community">Community</a>
+        <a href="about.html" data-nav="about">About</a>
+      </nav>
+      <div class="account-actions">
+        <a class="btn ghost" id="downloadCenter" href="downloads.html">Downloads</a>
+        <button class="btn primary" id="signInButton">Sign in</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <aside class="account-panel" id="accountPanel" aria-hidden="true">
+      <div class="account-panel__container">
+        <div class="account-panel__header">
+          <h2>Welcome back</h2>
+          <button class="icon-button" id="closeAccountPanel" aria-label="Close account panel">×</button>
+        </div>
+        <p class="account-panel__lead">
+          Sign in to sync your ZomiHub library across the web app and mobile app.
+        </p>
+        <form class="account-form">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+          <button type="submit" class="btn primary full">Continue</button>
+          <button type="button" class="btn ghost full" id="createAccount">Create a new account</button>
+        </form>
+        <p class="account-panel__footnote">
+          By continuing you agree to our community guidelines and cultural stewardship pledge.
+        </p>
+      </div>
+    </aside>
+
+    <main>
+      <section class="page-hero page-hero--community">
+        <div class="page-hero__content">
+          <p class="eyebrow">Community</p>
+          <h1>Collaborate with curators, elders, and storytellers.</h1>
+          <p>
+            ZomiHub thrives on contributions from global partners. Share your archives, host listening sessions, and help translate
+            new works for the diaspora.
+          </p>
+          <div class="page-hero__actions">
+            <a class="btn primary" href="#submit">Submit a collection</a>
+            <a class="btn secondary" href="#events">View upcoming events</a>
+          </div>
+        </div>
+        <div class="page-hero__meta">
+          <h3>Community stats</h3>
+          <ul>
+            <li><strong>98</strong> verified cultural stewards</li>
+            <li><strong>640</strong> community contributed items</li>
+            <li><strong>42</strong> global listening sessions</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="community-callouts" data-component="story-switcher">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Spotlight initiatives</p>
+            <h2>Programs powered by the community</h2>
+          </div>
+        </header>
+        <div class="story-switcher">
+          <div class="story-switcher__tabs">
+            <button class="pill" data-story="archives">Archive labs</button>
+            <button class="pill" data-story="listening">Listening circles</button>
+            <button class="pill" data-story="education">Education partnerships</button>
+          </div>
+          <article class="story-card" data-story-panel="archives">
+            <h3>Archive digitization labs</h3>
+            <p>
+              Regional teams scan photographs, documents, and tapes using shared preservation kits. Volunteers add metadata and context
+              notes reviewed by elders.
+            </p>
+          </article>
+          <article class="story-card" data-story-panel="listening" hidden>
+            <h3>Monthly listening circles</h3>
+            <p>
+              Members host gatherings to share newly digitized recordings, inviting elders to provide translation and cultural insight.
+            </p>
+          </article>
+          <article class="story-card" data-story-panel="education" hidden>
+            <h3>Education exchange</h3>
+            <p>
+              Teachers across the diaspora co-create lesson plans using ZomiHub resources and share success stories during webinars.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="submission-form" id="submit">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Submit a collection</p>
+            <h2>Tell us about the materials you would like to share</h2>
+          </div>
+        </header>
+        <form class="form-grid">
+          <label>
+            Your name
+            <input type="text" placeholder="Full name" required />
+          </label>
+          <label>
+            Email address
+            <input type="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Collection focus
+            <select required>
+              <option value="">Select an option</option>
+              <option>Music & performance</option>
+              <option>Oral histories</option>
+              <option>Photographs & documents</option>
+              <option>Educational resources</option>
+            </select>
+          </label>
+          <label class="full">
+            Description
+            <textarea rows="4" placeholder="Tell us about the items, languages, and any context we should know." required></textarea>
+          </label>
+          <label class="full">
+            Links (optional)
+            <input type="url" placeholder="https://" />
+          </label>
+          <button type="submit" class="btn primary full">Send submission</button>
+        </form>
+        <p class="form-footnote">Submissions are reviewed with cultural stewards before publishing.</p>
+      </section>
+
+      <section class="events" id="events">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Upcoming events</p>
+            <h2>Connect with Zomi communities near you</h2>
+          </div>
+        </header>
+        <div class="events-grid">
+          <article>
+            <h3>Heritage audio workshop</h3>
+            <p>Learn to digitize cassettes and preserve oral histories with portable kits.</p>
+          </article>
+          <article>
+            <h3>Festival kitchen livestream</h3>
+            <p>Cook along with Chef Van Lian and share your own family recipes.</p>
+          </article>
+          <article>
+            <h3>Story translation sprint</h3>
+            <p>Collaborate on translating folktales into English, Burmese, and Tedim dialects.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>ZomiHub</strong>
+        <p>Preserving Zomi culture through respectful, community-led storytelling.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="library.html">My Library</a>
+        <a href="community.html">Community</a>
+        <a href="about.html">About</a>
+      </nav>
+      <p class="footnote">© 2024 ZomiHub Collective. All rights reserved.</p>
+    </footer>
+
+    <div class="modal" id="itemModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__content">
+        <button class="icon-button modal__close" id="closeModal" aria-label="Close detail view">×</button>
+        <div class="modal__media"></div>
+        <div class="modal__details">
+          <p class="modal__type"></p>
+          <h3 id="modalTitle"></h3>
+          <p class="modal__meta"></p>
+          <p class="modal__description"></p>
+          <div class="modal__actions">
+            <button class="btn primary" id="modalSave">Add to library</button>
+            <button class="btn secondary" id="modalDownload">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

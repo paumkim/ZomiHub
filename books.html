@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZomiHub Bookshelf</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page="books">
+    <header class="app-header" id="top">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">✧</span>
+        <a class="brand-name" href="index.html">ZomiHub</a>
+      </div>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="collections.html" data-nav="collections">Collections</a>
+        <a href="books.html" data-nav="books">Books</a>
+        <a href="films.html" data-nav="films">Films</a>
+        <a href="tv.html" data-nav="tv">TV</a>
+        <a href="music.html" data-nav="music">Music</a>
+        <a href="articles.html" data-nav="articles">Articles</a>
+        <a href="library.html" data-nav="library">My Library</a>
+        <a href="downloads.html" data-nav="downloads">Downloads</a>
+        <a href="community.html" data-nav="community">Community</a>
+        <a href="about.html" data-nav="about">About</a>
+      </nav>
+      <div class="account-actions">
+        <a class="btn ghost" id="downloadCenter" href="downloads.html">Downloads</a>
+        <button class="btn primary" id="signInButton">Sign in</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <aside class="account-panel" id="accountPanel" aria-hidden="true">
+      <div class="account-panel__container">
+        <div class="account-panel__header">
+          <h2>Welcome back</h2>
+          <button class="icon-button" id="closeAccountPanel" aria-label="Close account panel">×</button>
+        </div>
+        <p class="account-panel__lead">
+          Sign in to sync your ZomiHub library across the web app and mobile app.
+        </p>
+        <form class="account-form">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+          <button type="submit" class="btn primary full">Continue</button>
+          <button type="button" class="btn ghost full" id="createAccount">Create a new account</button>
+        </form>
+        <p class="account-panel__footnote">
+          By continuing you agree to our community guidelines and cultural stewardship pledge.
+        </p>
+      </div>
+    </aside>
+
+    <main>
+      <section class="page-hero page-hero--books">
+        <div class="page-hero__content">
+          <p class="eyebrow">Bookshelf</p>
+          <h1>Immerse yourself in Zomi literature, folktales, and research.</h1>
+          <p>
+            From rare manuscripts to classroom lesson packs, the ZomiHub book collection is organized like a modern reading room.
+            Filter by genre, level, or topic and save everything to your shelves.
+          </p>
+          <div class="page-hero__actions">
+            <a class="btn primary" href="#catalog">Browse books</a>
+            <a class="btn secondary" href="#language">Language kits</a>
+            <a class="btn secondary" href="downloads.html">Download manager</a>
+          </div>
+        </div>
+        <div class="page-hero__meta">
+          <h3>Reading modes</h3>
+          <ul>
+            <li>Responsive reader with adjustable fonts</li>
+            <li>One-click download for PDF and EPUB</li>
+            <li>Listen to narrated chapters alongside text</li>
+          </ul>
+        </div>
+      </section>
+
+      <section
+        class="media-room"
+        id="catalog"
+        data-component="collection-browser"
+        data-default-category="book"
+        data-categories="book"
+      >
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Book catalog</p>
+            <h2>Curated reading lists for every learner</h2>
+          </div>
+          <div class="explore__controls">
+            <label for="bookSearch" class="sr-only">Search books</label>
+            <input id="bookSearch" type="search" placeholder="Search by title, author, or tag" data-role="search" />
+          </div>
+        </header>
+        <div class="category-tabs" role="tablist" aria-label="Book categories">
+          <button class="tab-btn active" role="tab" data-category="book">Featured books</button>
+        </div>
+        <div class="results-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="library" data-component="library-shelves">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Your book shelf</p>
+            <h2>Keep your reading organized</h2>
+          </div>
+          <button class="btn secondary" data-action="clear-library">Clear library</button>
+        </header>
+        <div class="library-shelves">
+          <section class="shelf shelf--book" data-shelf="book">
+            <header>
+              <h3>Saved books</h3>
+              <p>All the titles you've added from the catalog.</p>
+            </header>
+            <div class="shelf__content"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="guide-panel" id="language">
+        <div class="guide-panel__content">
+          <h2>Language preservation toolkit</h2>
+          <p>
+            Download printable worksheets, phonetic guides, and storybooks paired with audio pronunciation from native speakers. Each
+            resource includes classroom discussion prompts.
+          </p>
+          <a class="btn primary" href="downloads.html">Open toolkit</a>
+        </div>
+        <div class="guide-panel__media" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>ZomiHub</strong>
+        <p>Preserving Zomi culture through respectful, community-led storytelling.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="library.html">My Library</a>
+        <a href="community.html">Community</a>
+        <a href="about.html">About</a>
+      </nav>
+      <p class="footnote">© 2024 ZomiHub Collective. All rights reserved.</p>
+    </footer>
+
+    <div class="modal" id="itemModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__content">
+        <button class="icon-button modal__close" id="closeModal" aria-label="Close detail view">×</button>
+        <div class="modal__media"></div>
+        <div class="modal__details">
+          <p class="modal__type"></p>
+          <h3 id="modalTitle"></h3>
+          <p class="modal__meta"></p>
+          <p class="modal__description"></p>
+          <div class="modal__actions">
+            <button class="btn primary" id="modalSave">Add to library</button>
+            <button class="btn secondary" id="modalDownload">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
