@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZomiHub Collections</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page="collections">
+    <header class="app-header" id="top">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">✧</span>
+        <a class="brand-name" href="index.html">ZomiHub</a>
+      </div>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="collections.html" data-nav="collections">Collections</a>
+        <a href="books.html" data-nav="books">Books</a>
+        <a href="films.html" data-nav="films">Films</a>
+        <a href="tv.html" data-nav="tv">TV</a>
+        <a href="music.html" data-nav="music">Music</a>
+        <a href="articles.html" data-nav="articles">Articles</a>
+        <a href="library.html" data-nav="library">My Library</a>
+        <a href="downloads.html" data-nav="downloads">Downloads</a>
+        <a href="community.html" data-nav="community">Community</a>
+        <a href="about.html" data-nav="about">About</a>
+      </nav>
+      <div class="account-actions">
+        <a class="btn ghost" id="downloadCenter" href="downloads.html">Downloads</a>
+        <button class="btn primary" id="signInButton">Sign in</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <aside class="account-panel" id="accountPanel" aria-hidden="true">
+      <div class="account-panel__container">
+        <div class="account-panel__header">
+          <h2>Welcome back</h2>
+          <button class="icon-button" id="closeAccountPanel" aria-label="Close account panel">×</button>
+        </div>
+        <p class="account-panel__lead">
+          Sign in to sync your ZomiHub library across the web app and mobile app.
+        </p>
+        <form class="account-form">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+          <button type="submit" class="btn primary full">Continue</button>
+          <button type="button" class="btn ghost full" id="createAccount">Create a new account</button>
+        </form>
+        <p class="account-panel__footnote">
+          By continuing you agree to our community guidelines and cultural stewardship pledge.
+        </p>
+      </div>
+    </aside>
+
+    <main>
+      <section class="page-hero page-hero--collections">
+        <div class="page-hero__content">
+          <p class="eyebrow">Collections</p>
+          <h1>Browse every media format curated for the global Zomi community.</h1>
+          <p>
+            Use the filters below to explore hundreds of films, books, music albums, television series, and articles. Everything
+            you save appears instantly in your personal Zomi library and syncs across devices.
+          </p>
+          <div class="page-hero__actions">
+            <a class="btn secondary" href="books.html">View book room</a>
+            <a class="btn secondary" href="films.html">Visit cinema</a>
+            <a class="btn secondary" href="music.html">Enter music hall</a>
+          </div>
+        </div>
+        <div class="page-hero__meta">
+          <h3>Need inspiration?</h3>
+          <p>Follow curated themes crafted with Zomi elders, educators, and historians.</p>
+          <ul>
+            <li><a href="#thematic">Festival season highlights</a></li>
+            <li><a href="#language">Language preservation sets</a></li>
+            <li><a href="#diaspora">Diaspora stories</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="explore" data-component="collection-browser" data-default-category="all">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Search the archive</p>
+            <h2>Filter by category, curator, or topic</h2>
+          </div>
+          <div class="explore__controls">
+            <label for="collectionSearch" class="sr-only">Search media</label>
+            <input id="collectionSearch" type="search" placeholder="Search titles, creators, or themes" data-role="search" />
+          </div>
+        </header>
+        <div class="category-tabs" role="tablist" aria-label="Media categories">
+          <button class="tab-btn active" role="tab" data-category="all">All</button>
+          <button class="tab-btn" role="tab" data-category="book">Books</button>
+          <button class="tab-btn" role="tab" data-category="film">Films</button>
+          <button class="tab-btn" role="tab" data-category="tv">TV</button>
+          <button class="tab-btn" role="tab" data-category="music">Music</button>
+          <button class="tab-btn" role="tab" data-category="article">Articles</button>
+        </div>
+        <div class="explore__layout explore__layout--full">
+          <div class="results-grid" aria-live="polite"></div>
+          <aside class="curator-spotlight" aria-live="polite">
+            <h3>Curator spotlight</h3>
+            <p class="spotlight__name"></p>
+            <p class="spotlight__note"></p>
+            <button class="btn ghost" data-role="follow-curator">Follow curator</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="collection-guides" id="thematic">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Curated journeys</p>
+            <h2>Experience the archive like a Zomi curator</h2>
+          </div>
+        </header>
+        <div class="guide-grid">
+          <article class="guide-card">
+            <h3>Festival season</h3>
+            <p>
+              Films, playlists, and oral histories that celebrate the rhythms, dress, and culinary traditions of Zomi festivals
+              around the world.
+            </p>
+            <a class="btn tertiary" href="films.html#festival">View set</a>
+          </article>
+          <article class="guide-card" id="language">
+            <h3>Language keepers</h3>
+            <p>
+              Books, TV lessons, and music with companion PDFs that help families pass Zomi languages to new generations.
+            </p>
+            <a class="btn tertiary" href="books.html#language">Open classroom</a>
+          </article>
+          <article class="guide-card" id="diaspora">
+            <h3>Diaspora journeys</h3>
+            <p>
+              Documentaries, interviews, and essays capturing migration stories, hybrid identities, and community-building abroad.
+            </p>
+            <a class="btn tertiary" href="articles.html#diaspora">Start reading</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="collection-callout" data-component="library-shelves" data-compact>
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Quick access</p>
+            <h2>Recently saved to your library</h2>
+          </div>
+          <a class="btn secondary" href="library.html">Manage full library</a>
+        </header>
+        <div class="library-shelves library-shelves--compact">
+          <section class="shelf shelf--film" data-shelf="film">
+            <header>
+              <h3>Films</h3>
+            </header>
+            <div class="shelf__content"></div>
+          </section>
+          <section class="shelf shelf--book" data-shelf="book">
+            <header>
+              <h3>Books</h3>
+            </header>
+            <div class="shelf__content"></div>
+          </section>
+          <section class="shelf shelf--music" data-shelf="music">
+            <header>
+              <h3>Music</h3>
+            </header>
+            <div class="shelf__content"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>ZomiHub</strong>
+        <p>Preserving Zomi culture through respectful, community-led storytelling.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="library.html">My Library</a>
+        <a href="community.html">Community</a>
+        <a href="about.html">About</a>
+      </nav>
+      <p class="footnote">© 2024 ZomiHub Collective. All rights reserved.</p>
+    </footer>
+
+    <div class="modal" id="itemModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__content">
+        <button class="icon-button modal__close" id="closeModal" aria-label="Close detail view">×</button>
+        <div class="modal__media"></div>
+        <div class="modal__details">
+          <p class="modal__type"></p>
+          <h3 id="modalTitle"></h3>
+          <p class="modal__meta"></p>
+          <p class="modal__description"></p>
+          <div class="modal__actions">
+            <button class="btn primary" id="modalSave">Add to library</button>
+            <button class="btn secondary" id="modalDownload">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZomiHub Cinema</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page="films">
+    <header class="app-header" id="top">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">✧</span>
+        <a class="brand-name" href="index.html">ZomiHub</a>
+      </div>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="collections.html" data-nav="collections">Collections</a>
+        <a href="books.html" data-nav="books">Books</a>
+        <a href="films.html" data-nav="films">Films</a>
+        <a href="tv.html" data-nav="tv">TV</a>
+        <a href="music.html" data-nav="music">Music</a>
+        <a href="articles.html" data-nav="articles">Articles</a>
+        <a href="library.html" data-nav="library">My Library</a>
+        <a href="downloads.html" data-nav="downloads">Downloads</a>
+        <a href="community.html" data-nav="community">Community</a>
+        <a href="about.html" data-nav="about">About</a>
+      </nav>
+      <div class="account-actions">
+        <a class="btn ghost" id="downloadCenter" href="downloads.html">Downloads</a>
+        <button class="btn primary" id="signInButton">Sign in</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <aside class="account-panel" id="accountPanel" aria-hidden="true">
+      <div class="account-panel__container">
+        <div class="account-panel__header">
+          <h2>Welcome back</h2>
+          <button class="icon-button" id="closeAccountPanel" aria-label="Close account panel">×</button>
+        </div>
+        <p class="account-panel__lead">
+          Sign in to sync your ZomiHub library across the web app and mobile app.
+        </p>
+        <form class="account-form">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+          <button type="submit" class="btn primary full">Continue</button>
+          <button type="button" class="btn ghost full" id="createAccount">Create a new account</button>
+        </form>
+        <p class="account-panel__footnote">
+          By continuing you agree to our community guidelines and cultural stewardship pledge.
+        </p>
+      </div>
+    </aside>
+
+    <main>
+      <section class="page-hero page-hero--films">
+        <div class="page-hero__content">
+          <p class="eyebrow">Cinema</p>
+          <h1>Documentaries and films capturing Zomi life.</h1>
+          <p>
+            Stream curated selections of feature films, shorts, and documentaries that preserve ceremonial music, cuisine, and
+            everyday stories of Zomi people worldwide.
+          </p>
+          <div class="page-hero__actions">
+            <a class="btn primary" href="#catalog">Start watching</a>
+            <a class="btn secondary" href="#festival">Festival reels</a>
+            <a class="btn secondary" href="downloads.html">Offline queue</a>
+          </div>
+        </div>
+        <div class="page-hero__meta">
+          <h3>Projection options</h3>
+          <ul>
+            <li>Stream in HD with subtitles in English and Burmese</li>
+            <li>Download MP4s for community screenings</li>
+            <li>Access director notes and teaching guides</li>
+          </ul>
+        </div>
+      </section>
+
+      <section
+        class="media-room"
+        id="catalog"
+        data-component="collection-browser"
+        data-default-category="film"
+        data-categories="film"
+      >
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Film catalog</p>
+            <h2>Featured documentaries and feature films</h2>
+          </div>
+          <div class="explore__controls">
+            <label for="filmSearch" class="sr-only">Search films</label>
+            <input id="filmSearch" type="search" placeholder="Search by title or theme" data-role="search" />
+          </div>
+        </header>
+        <div class="category-tabs" role="tablist" aria-label="Film categories">
+          <button class="tab-btn active" role="tab" data-category="film">Films</button>
+        </div>
+        <div class="results-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="library" data-component="library-shelves">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Your cinema shelf</p>
+            <h2>Bookmark screenings</h2>
+          </div>
+          <button class="btn secondary" data-action="clear-library">Clear library</button>
+        </header>
+        <div class="library-shelves">
+          <section class="shelf shelf--film" data-shelf="film">
+            <header>
+              <h3>Saved films</h3>
+              <p>Quick links to everything you plan to watch.</p>
+            </header>
+            <div class="shelf__content"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="festival-section" id="festival">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Festival spotlight</p>
+            <h2>Lamka Harvest Festival series</h2>
+          </div>
+          <a class="btn tertiary" href="downloads.html">Download screening kit</a>
+        </header>
+        <div class="festival-grid">
+          <article>
+            <h3>Opening night</h3>
+            <p>Kick off with "Mountain Songs of Resilience" followed by live Q&A.</p>
+          </article>
+          <article>
+            <h3>Artisan market stories</h3>
+            <p>Pair "Woven Paths" with behind-the-scenes interviews with textile artists.</p>
+          </article>
+          <article>
+            <h3>Closing ceremonies</h3>
+            <p>Stream "Harvest Harmony" and download community discussion prompts.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>ZomiHub</strong>
+        <p>Preserving Zomi culture through respectful, community-led storytelling.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="library.html">My Library</a>
+        <a href="community.html">Community</a>
+        <a href="about.html">About</a>
+      </nav>
+      <p class="footnote">© 2024 ZomiHub Collective. All rights reserved.</p>
+    </footer>
+
+    <div class="modal" id="itemModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__content">
+        <button class="icon-button modal__close" id="closeModal" aria-label="Close detail view">×</button>
+        <div class="modal__media"></div>
+        <div class="modal__details">
+          <p class="modal__type"></p>
+          <h3 id="modalTitle"></h3>
+          <p class="modal__meta"></p>
+          <p class="modal__description"></p>
+          <div class="modal__actions">
+            <button class="btn primary" id="modalSave">Add to library</button>
+            <button class="btn secondary" id="modalDownload">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

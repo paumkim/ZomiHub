@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZomiHub | Cultural Media Library</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page="home">
+    <header class="app-header" id="top">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">✧</span>
+        <a class="brand-name" href="index.html" aria-current="page">ZomiHub</a>
+      </div>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="collections.html" data-nav="collections">Collections</a>
+        <a href="library.html" data-nav="library">My Library</a>
+        <a href="downloads.html" data-nav="downloads">Downloads</a>
+        <a href="community.html" data-nav="community">Community</a>
+        <a href="about.html" data-nav="about">About</a>
+      </nav>
+      <div class="account-actions">
+        <a class="btn ghost" id="downloadCenter" href="downloads.html">Downloads</a>
+        <button class="btn primary" id="signInButton">Sign in</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <aside class="account-panel" id="accountPanel" aria-hidden="true">
+      <div class="account-panel__container">
+        <div class="account-panel__header">
+          <h2>Welcome back</h2>
+          <button class="icon-button" id="closeAccountPanel" aria-label="Close account panel">×</button>
+        </div>
+        <p class="account-panel__lead">
+          Sign in to sync your ZomiHub library across the web app and mobile app.
+        </p>
+        <form class="account-form">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+          <button type="submit" class="btn primary full">Continue</button>
+          <button type="button" class="btn ghost full" id="createAccount">Create a new account</button>
+        </form>
+        <p class="account-panel__footnote">
+          By continuing you agree to our community guidelines and cultural stewardship pledge.
+        </p>
+      </div>
+    </aside>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero__content">
+          <p class="eyebrow">The living archive of the Zomi people</p>
+          <h1>Stream, learn, and build your own Zomi cultural library online.</h1>
+          <p>
+            ZomiHub gathers films, TV programs, music, books, and oral histories into one trusted place. Save what inspires you,
+            download treasures to keep, and follow curators who honor Zomi heritage.
+          </p>
+          <div class="hero__actions">
+            <a class="btn primary" href="collections.html">Start exploring</a>
+            <button class="btn secondary" id="learnMore">How ZomiHub works</button>
+          </div>
+          <div class="hero__stats" role="list">
+            <div role="listitem">
+              <strong>480+</strong>
+              <span>Curated films & documentaries</span>
+            </div>
+            <div role="listitem">
+              <strong>1.2k</strong>
+              <span>Digitized books & manuscripts</span>
+            </div>
+            <div role="listitem">
+              <strong>230</strong>
+              <span>Community playlists & podcasts</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__preview" aria-hidden="true">
+          <div class="hero-card hero-card--film">
+            <span class="hero-card__eyebrow">Featured documentary</span>
+            <h3>Mountain Songs of Resilience</h3>
+            <p>A cinematic journey through Zomi festivals with never-before-seen footage.</p>
+            <button class="btn tertiary" data-open-id="film-mountain-songs">View details</button>
+          </div>
+          <div class="hero-card hero-card--book">
+            <span class="hero-card__eyebrow">Editor's pick</span>
+            <h3>Stories by the Hearth</h3>
+            <p>Folktales collected across four generations of storytellers.</p>
+            <button class="btn tertiary" data-open-id="book-hearth">Read excerpt</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-strip" id="features">
+        <article>
+          <h3>Always online</h3>
+          <p>
+            Access the full ZomiHub library from any device. Your saved collections follow you everywhere once you sign in.
+          </p>
+        </article>
+        <article>
+          <h3>Download what you love</h3>
+          <p>
+            Every item includes a download option so you can keep materials for offline study, community events, or travel.
+          </p>
+        </article>
+        <article>
+          <h3>Respectful curation</h3>
+          <p>
+            Metadata, translations, and cultural notes are reviewed with Zomi historians and elders to ensure context and care.
+          </p>
+        </article>
+      </section>
+
+      <section
+        class="explore"
+        id="explore"
+        data-component="collection-browser"
+        data-default-category="all"
+      >
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Explore collections</p>
+            <h2>Discover media crafted by and for the Zomi community</h2>
+          </div>
+          <div class="explore__controls">
+            <label for="searchInput" class="sr-only">Search media</label>
+            <input id="searchInput" type="search" placeholder="Search titles, creators, or themes" data-role="search" />
+          </div>
+        </header>
+
+        <div class="category-tabs" role="tablist" aria-label="Media categories">
+          <button class="tab-btn active" role="tab" data-category="all">All</button>
+          <button class="tab-btn" role="tab" data-category="book">Books</button>
+          <button class="tab-btn" role="tab" data-category="film">Films</button>
+          <button class="tab-btn" role="tab" data-category="tv">TV</button>
+          <button class="tab-btn" role="tab" data-category="music">Music</button>
+          <button class="tab-btn" role="tab" data-category="article">Articles</button>
+        </div>
+
+        <div class="explore__layout">
+          <div class="results-grid" aria-live="polite"></div>
+          <aside class="curator-spotlight" aria-live="polite">
+            <h3>Curator spotlight</h3>
+            <p class="spotlight__name"></p>
+            <p class="spotlight__note"></p>
+            <button class="btn ghost" data-role="follow-curator">Follow curator</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="library" id="library" data-component="library-shelves">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">My Zomi library</p>
+            <h2>Your saved collections, organized by media type</h2>
+          </div>
+          <button class="btn secondary" data-action="clear-library">Clear library</button>
+        </header>
+
+        <div class="library__notice" data-role="empty-library">
+          <h3>Your library is waiting</h3>
+          <p>
+            Start by adding books, films, TV programs, and music from the collections above. Each shelf adapts to the media so you
+            always know where you are.
+          </p>
+        </div>
+
+        <div class="library-shelves">
+          <section class="shelf shelf--book" data-shelf="book">
+            <header>
+              <h3>Book shelf</h3>
+              <p>Paginated reading lists, manuscripts, and language guides.</p>
+            </header>
+            <div class="shelf__content"></div>
+          </section>
+
+          <section class="shelf shelf--film" data-shelf="film">
+            <header>
+              <h3>Film shelf</h3>
+              <p>Feature films, documentaries, and festival screenings.</p>
+            </header>
+            <div class="shelf__content"></div>
+          </section>
+
+          <section class="shelf shelf--tv" data-shelf="tv">
+            <header>
+              <h3>TV shelf</h3>
+              <p>Series, interviews, and episodic cultural programs.</p>
+            </header>
+            <div class="shelf__content"></div>
+          </section>
+
+          <section class="shelf shelf--music" data-shelf="music">
+            <header>
+              <h3>Music shelf</h3>
+              <p>Albums, live recordings, and curated playlists.</p>
+            </header>
+            <div class="shelf__content"></div>
+          </section>
+
+          <section class="shelf shelf--article" data-shelf="article">
+            <header>
+              <h3>Articles & research</h3>
+              <p>Academic writing, historical essays, and community journals.</p>
+            </header>
+            <div class="shelf__content"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="timeline" data-component="timeline">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">ZomiHub roadmap</p>
+            <h2>Track how the cultural hub keeps growing</h2>
+          </div>
+        </header>
+        <div class="timeline__controls">
+          <button class="pill" data-stage="collect">Collection</button>
+          <button class="pill" data-stage="preserve">Preservation</button>
+          <button class="pill" data-stage="share">Community sharing</button>
+        </div>
+        <div class="timeline__panels">
+          <article data-stage-panel="collect">
+            <h3>Collecting heritage</h3>
+            <p>
+              Community teams digitize family archives, festivals, and manuscripts using preservation-grade workflows aligned with
+              Zomi elders.
+            </p>
+          </article>
+          <article data-stage-panel="preserve" hidden>
+            <h3>Preserving context</h3>
+            <p>
+              Linguists and historians verify translations, add cultural notes, and build metadata so every piece keeps its meaning
+              across languages.
+            </p>
+          </article>
+          <article data-stage-panel="share" hidden>
+            <h3>Sharing responsibly</h3>
+            <p>
+              Members stream online, save to their libraries, and download for educational events while respecting stewardship
+              guidelines.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="community-stories" data-component="story-switcher">
+        <header class="section-heading">
+          <div>
+            <p class="eyebrow">Community voices</p>
+            <h2>Hear how ZomiHub is used around the world</h2>
+          </div>
+        </header>
+        <div class="story-switcher">
+          <div class="story-switcher__tabs">
+            <button class="pill" data-story="festival">Festival organizer</button>
+            <button class="pill" data-story="teacher">Language teacher</button>
+            <button class="pill" data-story="diaspora">Diaspora family</button>
+          </div>
+          <article class="story-card" data-story-panel="festival">
+            <h3>Preserving Lamka Festival sets</h3>
+            <p>
+              "We screen documentaries from the ZomiHub film collection before each performance so our youth see the rituals they
+              inherit." — Nawng, festival lead
+            </p>
+          </article>
+          <article class="story-card" data-story-panel="teacher" hidden>
+            <h3>Language classrooms abroad</h3>
+            <p>
+              "Our students build playlists of Zomi songs and download lesson packets from the books shelf to practice every week." —
+              Ling, community teacher
+            </p>
+          </article>
+          <article class="story-card" data-story-panel="diaspora" hidden>
+            <h3>Family storytelling nights</h3>
+            <p>
+              "We saved oral histories and films into our library so grandparents can share memories even when we're far apart." —
+              The Khai family
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="community" id="community">
+        <div class="community__content">
+          <h2>Contribute to the growing Zomi story</h2>
+          <p>
+            Share family archives, publish new works, host listening sessions, and help catalog translations. ZomiHub connects
+            creators, elders, and learners across the globe.
+          </p>
+          <div class="community__actions">
+            <a class="btn primary" href="community.html">Become a curator</a>
+            <a class="btn secondary" href="community.html#submit">Submit a collection</a>
+          </div>
+        </div>
+        <ul class="community__stats" role="list">
+          <li>
+            <strong>98</strong>
+            <span>Verified cultural stewards</span>
+          </li>
+          <li>
+            <strong>640</strong>
+            <span>Community contributed items</span>
+          </li>
+          <li>
+            <strong>42</strong>
+            <span>Global listening sessions hosted</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>ZomiHub</strong>
+        <p>Preserving Zomi culture through respectful, community-led storytelling.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="library.html">My Library</a>
+        <a href="community.html">Community</a>
+        <a href="about.html">About</a>
+      </nav>
+      <p class="footnote">© 2024 ZomiHub Collective. All rights reserved.</p>
+    </footer>
+
+    <div class="modal" id="itemModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__content">
+        <button class="icon-button modal__close" id="closeModal" aria-label="Close detail view">×</button>
+        <div class="modal__media"></div>
+        <div class="modal__details">
+          <p class="modal__type"></p>
+          <h3 id="modalTitle"></h3>
+          <p class="modal__meta"></p>
+          <p class="modal__description"></p>
+          <div class="modal__actions">
+            <button class="btn primary" id="modalSave">Add to library</button>
+            <button class="btn secondary" id="modalDownload">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
